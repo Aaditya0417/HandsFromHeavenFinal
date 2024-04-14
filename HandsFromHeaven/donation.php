@@ -23,16 +23,16 @@
   <header id="header" class="fixed-top d-flex align-items-center">
     <div class="container d-flex align-items-center">
       <div class="logo me-auto">
-        <h1><a href="index.html"><img src="assets/img/logo.png"></a></h1>
+        <h1><a href="index.php"><img src="assets/img/logo.png"></a></h1>
           </div>
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto" href="index.html">HOME</a></li>
-          <li><a class="nav-link scrollto" href="about.html">ABOUT US</a></li>
-          <li><a class="nav-link scrollto" href="activities.html">PROJECTS</a></li>
-          <li><a class="nav-link scrollto active" href="donation.html">DONATE</a></li>
-          <li><a class="nav-link scrollto" href="contact.html">CONTACT US</a></li>
-          <li><a class="nav-link scrollto" href="login.html">LOGIN</a></li>
+        <li><a class="nav-link scrollto active" href="index.php">HOME</a></li>
+          <li><a class="nav-link scrollto" href="about.php">ABOUT US</a></li>
+          <li><a class="nav-link scrollto" href="activities.php">PROJECTS</a></li>
+          <li><a class="nav-link scrollto" href="donation.php">DONATE</a></li>
+          <li><a class="nav-link scrollto" href="contact.php">CONTACT US</a></li>
+          <li><a class="nav-link scrollto" href="login.php">LOGIN</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
