@@ -3,7 +3,7 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Raleway", sans-serif;
   color: #444444;
   overflow-x: hidden;
 }
@@ -380,10 +380,9 @@ section {
 .activities .text
 {
   font-size: 1.3rem;
-  
   padding:20px; 
   background-color: #14b1ff;
-  border-radius: 0 0 0 35px;
+  border-radius: 0 0 0 30px;
   box-shadow: 0px 5px #d6d6d6;
 }
 
@@ -401,7 +400,7 @@ section {
   
   padding:20px; 
   background-color: #7c858a;
-  border-radius: 0 0 35px 0;
+  border-radius: 0 0 30px 0;
   box-shadow: 0px 5px #d6d6d6;
 }
 
@@ -489,4 +488,8 @@ section {
 #footer .container.py-4 {
   text-align: center;
   padding-top: 20px;
+}
+
+#vm{
+  color: white;
 }
