@@ -27,10 +27,10 @@
           </div>
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-        <li><a class="nav-link scrollto active" href="index.php">HOME</a></li>
+          <li><a class="nav-link scrollto" href="index.php">HOME</a></li>
           <li><a class="nav-link scrollto" href="about.php">ABOUT US</a></li>
           <li><a class="nav-link scrollto" href="activities.php">PROJECTS</a></li>
-          <li><a class="nav-link scrollto" href="donation.php">DONATE</a></li>
+          <li><a class="nav-link scrollto active" href="donation.php">DONATE</a></li>
           <li><a class="nav-link scrollto" href="contact.php">CONTACT US</a></li>
           <li><a class="nav-link scrollto" href="login.php">LOGIN</a></li>
         </ul>
