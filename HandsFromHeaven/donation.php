@@ -53,12 +53,12 @@
         <div class="col-lg-2 col-md-6 footer-links">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="index.html">HOME</a></li>
-            <li><a  href="about.html">ABOUT US</a></li>
-            <li><a href="activities.html">PROJECTS</a></li>
-            <li><a href="donation.html">DONATE</a></li>
-            <li><a href="contact.html">CONTACT US</a></li>
-            <li><a  href="login.html">LOGIN</a></li>
+            <li><a href="index.php">HOME</a></li>
+            <li><a  href="about.php">ABOUT US</a></li>
+            <li><a href="activities.php">PROJECTS</a></li>
+            <li><a href="donation.php">DONATE</a></li>
+            <li><a href="contact.php">CONTACT US</a></li>
+            <li><a  href="login.php">LOGIN</a></li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-6 footer-contact">
