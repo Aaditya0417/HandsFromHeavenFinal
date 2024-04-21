@@ -27,15 +27,16 @@ $password = 'Aaditya@1399';
 $dbname = 'NGO_Fund_Management';
 
 try {
-    $db = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    $tables = ['Company', 'NGO', 'Project', 'FundAllocation', 'Company_Causes', 'NGO_Causes', 'Project_Causes', 'donates_to_CN', 'donates_to_CP', 'collabs_on', 'admins'];
+    $pdo = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // Fetch tables and display their contents
+    $tables = ['company', 'NGO', 'project', 'fundallocation', 'company_Causes', 'ngo_causes', 'project_causes', 'donates_to_CN', 'donates_to_CP', 'collabs_on', 'admins'];
 
     foreach ($tables as $table) {
         echo "<h2>$table Table</h2>";
         echo "<table>";
-        $stmt = $db->query("SELECT * FROM $table");
+        $stmt = $pdo->query("SELECT * FROM $table");
         $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
         echo "<tr>";
