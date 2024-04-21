@@ -18,15 +18,20 @@
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
   <link href="assets/css/style.css" rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-vhXvSZQlcqVlf8b8V6EQxk9UdPsZ3Npzgvi+ElxL3tW6G+APlnhBujGT9W78FJDjzDRv94oh+2h8pCbPBi4O9g==" crossorigin="anonymous" />
 </head>
 
 <body>
-  <!-- Header -->
-  <header id="header" class="fixed-top d-flex align-items-center">
-    <div class="container d-flex align-items-center">
-      <div class="logo me-auto">
-        <h1><a href="index.php"><img src="assets/img/logo.png"></a></h1>
-      </div>
+
+<!-- Header -->
+<header id="header" class="fixed-top d-flex align-items-center">
+  <div class="container d-flex align-items-center">
+    <div class="logo me-auto">
+      <h1><a href="index.php"><img src="assets/img/logo.png"></a></h1>
+    </div>
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">HOME</a></li>
@@ -38,82 +43,106 @@
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>
-    </div>
-  </header>
+  </div>
+</header>
 
-  <!--  Hero Section  -->
-  <div id="hero"></div>
+<!--  Hero Section  -->
+<div id="hero"></div>
 
-  <main id="main">
-   <!-- About -->
-   <section id="about" class="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 d-flex flex-column justify-contents-center" data-aos="fade-left">
-          <div class="content pt-4 pt-lg-0">
-            <h3>WHO ARE WE ?</h3>
-            <br>
-            <p class="fst-italic">
-              Our Website aims to streamline the process of allocating funds from various companies to NGOs, ensuring efficient support for projects aligned with specific causes.
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> We facilitate the allocation of funds to NGOs with projects aimed at addressing pressing social and environmental issues.</li>
-              <li><i class="bi bi-check-circle"></i> We collaborate with certified NGOs and companies to ensure transparency and accountability in fund distribution.</li>
-              <li><i class="bi bi-check-circle"></i> We believe in leveraging partnerships to drive sustainable impact and positive change in communities worldwide.</li>
-            </ul>
-            <p>
-              Join us in our mission to foster partnerships for the Sustainable Development Goals. Together, we can create a more sustainable world.
-            </p>
-            <br><br>
-          </div>
-        </div>
-        <div class="col-lg-5" data-aos="zoom-in">
-          <img src="assets/img/about.jpg" class="img-fluid" alt="">
-        </div>
+<!-- Carousel Section -->
+<section id="home-carousel" class="home-carousel">
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <img src="assets/img/save-tiger.jpg" alt="Save Tiger">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/img/girl-equality.jpg" alt="Girl Equality">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/img/feeding-hunger.jpeg" alt="Feeding Hunger">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/img/clean-oceans.png" alt="Clean Oceans">
+      </div>
+      <div class="swiper-slide">
+        <img src="assets/img/old-age.png" alt="Old Age">
       </div>
     </div>
-  </section>  
-  
-    <section>
-      <div class="typer">
-        <h3>
-          <span class="type"></span>
-        </h3>
-      </div>
-    </section>
+    <div class="swiper-pagination"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+</section>
 
-
-<!--Causes-->
-<section id="causes" class="causes section-bg">
+<!-- About -->
+<section id="about" class="about">
   <div class="container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Our Causes</h2>
-    </div>
     <div class="row">
-      <div class="col-lg-3 col-md-6">
-        <div class="box d-flex align-items-center justify-content-center" data-aos="zoom-in">
-          <h3>Empowering Underprivileged Children</h3>
+      <div class="col-lg-6 d-flex flex-column justify-contents-center" data-aos="fade-left">
+        <div class="content pt-4 pt-lg-0">
+          <h3>WHO ARE WE ?</h3>
+          <br>
+          <p class="fst-italic">
+          Our Website aims to streamline the process of allocating funds from various companies to NGOs, ensuring efficient support for projects aligned with specific causes.
+          </p>
+          <ul>
+            <li><i class="bi bi-check-circle"></i> We facilitate the allocation of funds to NGOs with projects aimed at addressing pressing social and environmental issues.</li>
+            <li><i class="bi bi-check-circle"></i> We collaborate with certified NGOs and companies to ensure transparency and accountability in fund distribution.</li>
+            <li><i class="bi bi-check-circle"></i> We believe in leveraging partnerships to drive sustainable impact and positive change in communities worldwide.</li>
+          </ul>
+          <p>
+          Join us in our mission to foster partnerships for the Sustainable Development Goals. Together, we can create a more sustainable world.
+          </p>
+          <br><br>
         </div>
       </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="box-alt d-flex align-items-center justify-content-center" data-aos="zoom-in">
-          <h3>Feeding the Hungry</h3>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="box d-flex align-items-center justify-content-center" data-aos="zoom-in">
-          <h3>Promoting Environmental Sustainability</h3>
-        </div>
-      </div>
-      <div class="col-lg-3 col-md-6">
-        <div class="box-alt d-flex align-items-center justify-content-center" data-aos="zoom-in">
-          <h3>Supporting Physically Challenged Individuals</h3>
-        </div>
+      <div class="col-lg-5" data-aos="zoom-in">
+        <img src="assets/img/about.jpg" class="img-fluid" alt="">
       </div>
     </div>
   </div>
 </section>
 
+<!-- blank space -->
+<section>
+  <div class="typer">
+    <h3>
+      <span class="type"></span>
+    </h3>
+  </div>
+</section>
+
+<!-- causes -->
+<section id="causes" class="causes section-bg">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <h2>Our Causes</h2>
+    </div>
+    <div class="causes-slider">
+      <div class="box d-flex align-items-center justify-content-center" data-aos="zoom-in">
+        <h3>Empowering Underprivileged Children</h3>
+      </div>
+      <div class="box-alt d-flex align-items-center justify-content-center" data-aos="zoom-in">
+        <h3>Feeding the Hungry</h3>
+      </div>
+      <div class="box d-flex align-items-center justify-content-center" data-aos="zoom-in">
+        <h3>Promoting Environmental Sustainability</h3>
+      </div>
+      <div class="box-alt d-flex align-items-center justify-content-center" data-aos="zoom-in">
+        <h3>Supporting Physically Challenged Individuals</h3>
+      </div>
+      <div class="box d-flex align-items-center justify-content-center" data-aos="zoom-in">
+        <h3>Protecting Endangered Species</h3>
+      </div>
+      <div class="box-alt d-flex align-items-center justify-content-center" data-aos="zoom-in">
+        <h3>Affordable Education For All</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- blank space -->
 <section>
   <div class="typer">
     <h3>
@@ -153,7 +182,6 @@
     </div>
   </div>
 </section>
-
 
 <!--Contact-->
 <section id="contact" class="contact">
@@ -217,8 +245,6 @@
   </div>
 </section>
 
-</main>
-
 <footer id="footer">
   <div class="footer-top">
     <div class="container">
@@ -231,11 +257,11 @@
           <h4>Quick Links</h4>
           <ul>
             <li><a href="index.php">HOME</a></li>
-          <li><a  href="about.php">ABOUT US</a></li>
-          <li><a href="activities.php">PROJECTS</a></li>
-          <li><a href="donation.php">DONATE</a></li>
-          <li><a href="contact.php">CONTACT US</a></li>
-          <li><a  href="login.php">LOGIN</a></li>
+            <li><a  href="about.php">ABOUT US</a></li>
+            <li><a href="activities.php">PROJECTS</a></li>
+            <li><a href="donation.php">DONATE</a></li>
+            <li><a href="contact.php">CONTACT US</a></li>
+            <li><a  href="login.php">LOGIN</a></li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-6 footer-contact">
@@ -280,6 +306,57 @@
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 <script src="assets/js/main.js"></script>
 
-</body>
+<!-- for carousel -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
 
+<script>
+  var swiper = new Swiper(".swiper-container", {
+    autoplay: {
+      delay: 2000, 
+    },
+    loop: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true, 
+    },
+  });
+</script>
+
+<!-- for causes -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+<script>
+$(document).ready(function(){
+  $('.causes-slider').slick({
+    slidesToShow: 3, 
+    slidesToScroll: 1, 
+    autoplay: true, 
+    loop: true,
+    autoplaySpeed: 2000, 
+    prevArrow: '<button type="button" class="slick-prev"><i class="fas fa-angle-left"></i></button>', 
+    nextArrow: '<button type="button" class="slick-next"><i class="fas fa-angle-right"></i></button>', 
+    responsive: [
+      {
+        breakpoint: 992, 
+        settings: {
+          slidesToShow: 2
+        }
+      },
+      {
+        breakpoint: 576, 
+        settings: {
+          slidesToShow: 1
+        }
+      }
+    ]
+  });
+});
+</script>
+
+</body>
 </html>
