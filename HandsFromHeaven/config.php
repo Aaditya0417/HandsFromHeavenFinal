@@ -1,13 +1,17 @@
 <?php
-$host = 'localhost';
-$user = 'postgres';
-$password = 'Aaditya@1399';
-$dbname = 'NGO_Fund_Management';
+// Database configuration
+$host = "localhost";
+$port = "5432";
+$dbname = "NGO_Fund_Management";
+$user = "postgres";
+$password = "aaditya";
 
-try {
-    $db = new PDO("pgsql:host=$host;dbname=$dbname", $user, $password);
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-} catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+// Attempt to establish a database connection
+$con = pg_connect("host=$host port=$port dbname=$dbname user=$user password=$password");
+
+// Check if the connection was successful
+if (!$con) {
+    // If connection failed, handle the error
+    die("Connection failed: " . pg_last_error());
 }
 ?>
