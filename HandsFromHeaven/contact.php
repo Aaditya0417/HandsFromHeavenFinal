@@ -28,8 +28,9 @@
         <ul>
           <li><a class="nav-link scrollto" href="index.php">HOME</a></li>
           <li><a class="nav-link scrollto" href="about.php">ABOUT US</a></li>
-          <li><a class="nav-link scrollto" href="activities.php">PROJECTS</a></li>
-          <li><a class="nav-link scrollto " href="donation.php">DONATE</a></li>
+          <li><a class="nav-link scrollto" href="company.php">COMPANIES</a></li>
+          <li><a class="nav-link scrollto" href="ngo.php">NGOs</a></li>
+          <li><a class="nav-link scrollto" href="projects.php">PROJECTS</a></li>
           <li><a class="nav-link scrollto active" href="contact.php">CONTACT US</a></li>
           <li><a class="nav-link scrollto" href="login.php">LOGIN</a></li>
         </ul>
@@ -50,7 +51,7 @@
               <h3>We would love to hear from you!<br>Give us a call, send us a message?</h3>
               <br>
               <h5>Phone Number</h5>
-              +91 9769319089
+              <a href="tel:9769319089"> 9769319089</a><br>
               <br><br>
               <h5>ADDRESS</h5>
               Hands From Heaven(R),<br>
@@ -59,7 +60,7 @@
               Ghatkopar(East), <Mumbai-400077></Mumbai-400077>.
               <br><br>
               <h5>EMAIL</h5>
-              handsfromheaven@gmail.com
+              <a href="mailto:HandsFromHeaven@gmail.com"> HandsFromHeaven@gmail.com</a><br>
             <br><br>
             <h5>FIND US ON SOCIAL MEDIA</h5>
             <div>
@@ -132,8 +133,9 @@
           <ul>
             <li><a href="index.php">HOME</a></li>
             <li><a  href="about.php">ABOUT US</a></li>
-            <li><a href="activities.php">PROJECTS</a></li>
-            <li><a href="donation.php">DONATE</a></li>
+            <li><a href="companies.php"></a>COMPANIES</li>
+            <li><a href="ngo.php"></a>NGOs</li>
+            <li><a href="projects.php">PROJECTS</a></li>
             <li><a href="contact.php">CONTACT US</a></li>
             <li><a  href="login.php">LOGIN</a></li>
           </ul>
@@ -145,8 +147,8 @@
             KJ Somaiya Road<br>
             Ghatkopar East,<br>
             Mumbai- 400077 <br><br>
-            <strong>Phone:</strong> 9769319089<br>
-            <strong>Email:</strong> HandsFromHeaven@gmail.com<br>
+            <strong>Phone:</strong><a href="tel:9769319089"> 9769319089</a><br>
+            <strong>Email:</strong><a href="mailto:HandsFromHeaven@gmail.com"> HandsFromHeaven@gmail.com</a><br>
           </p>
         </div>
         <div class="col-lg-2 col-md-6 footer-links">
@@ -168,7 +170,6 @@
     </div>
   </div>
 </footer>
-
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
