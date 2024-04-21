@@ -30,8 +30,9 @@
         <ul>
           <li><a class="nav-link scrollto" href="index.php">HOME</a></li>
           <li><a class="nav-link scrollto active" href="about.php">ABOUT US</a></li>
-          <li><a class="nav-link scrollto" href="activities.php">PROJECTS</a></li>
-          <li><a class="nav-link scrollto" href="donation.php">DONATE</a></li>
+          <li><a class="nav-link scrollto" href="company.php">COMPANIES</a></li>
+          <li><a class="nav-link scrollto" href="ngo.php">NGOs</a></li>
+          <li><a class="nav-link scrollto" href="projects.php">PROJECTS</a></li>
           <li><a class="nav-link scrollto" href="contact.php">CONTACT US</a></li>
           <li><a class="nav-link scrollto" href="login.php">LOGIN</a></li>
         </ul>
@@ -148,8 +149,12 @@
                 <input type="email" class="form-control" name="email" placeholder="Gender" id="email" required>
               </div>
               <div class="form-group col-md-12">
-                <input type="file" id="myFile" name="filename">
-              </div>
+    <label for="myFile">Upload Resume:</label>
+    <input type="file" id="myFile" name="filename" accept=".pdf,.doc,.docx" style="display: none;">
+    <label for="myFile" class="uploadButton">Choose File</label>
+</div>
+
+
             </div>
             <div class="text-center"><button type="submit" class="btn btn-primary">ENROLL</button></div>
           </form>
@@ -159,7 +164,7 @@
   </div>
 </section>
 
-  
+<!-- footer -->
 <footer id="footer">
   <div class="footer-top">
     <div class="container">
@@ -173,8 +178,9 @@
           <ul>
             <li><a href="index.php">HOME</a></li>
             <li><a  href="about.php">ABOUT US</a></li>
-            <li><a href="activities.php">PROJECTS</a></li>
-            <li><a href="donation.php">DONATE</a></li>
+            <li><a href="companies.php"></a>COMPANIES</li>
+            <li><a href="ngo.php"></a>NGOs</li>
+            <li><a href="projects.php">PROJECTS</a></li>
             <li><a href="contact.php">CONTACT US</a></li>
             <li><a  href="login.php">LOGIN</a></li>
           </ul>
@@ -186,8 +192,8 @@
             KJ Somaiya Road<br>
             Ghatkopar East,<br>
             Mumbai- 400077 <br><br>
-            <strong>Phone:</strong> 9769319089<br>
-            <strong>Email:</strong> HandsFromHeaven@gmail.com<br>
+            <strong>Phone:</strong><a href="tel:9769319089"> 9769319089</a><br>
+            <strong>Email:</strong><a href="mailto:HandsFromHeaven@gmail.com"> HandsFromHeaven@gmail.com</a><br>
           </p>
         </div>
         <div class="col-lg-2 col-md-6 footer-links">
@@ -209,7 +215,6 @@
     </div>
   </div>
 </footer>
-
 
   <!-- Back to Top Button -->
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
