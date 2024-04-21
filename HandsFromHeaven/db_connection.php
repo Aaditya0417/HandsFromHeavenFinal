@@ -23,7 +23,7 @@
 <?php
 $host = 'localhost';
 $user = 'postgres';
-$password = 'Aaditya@1399';
+$password = 'aaditya';
 $dbname = 'NGO_Fund_Management';
 
 try {
@@ -31,26 +31,38 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // Fetch tables and display their contents
-    $tables = ['company', 'NGO', 'project', 'fundallocation', 'company_Causes', 'ngo_causes', 'project_causes', 'donates_to_CN', 'donates_to_CP', 'collabs_on', 'admins'];
+    $tables = ['company', 'ngo', 'project', 'fundallocation', 'ngo_causes', 'project_causes', 'collabs_on', 'company_causes','donates_to_cn','donates_to_cp'];
 
     foreach ($tables as $table) {
         echo "<h2>$table Table</h2>";
         echo "<table>";
-        $stmt = $pdo->query("SELECT * FROM $table");
-        $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        try {
+            $stmt = $pdo->query("SELECT * FROM \"$table\"");
+            $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
-        echo "<tr>";
-        foreach ($rows[0] as $key => $value) {
-            echo "<th>$key</th>";
-        }
-        echo "</tr>";
+            if ($rows) {
+                echo "<tr>";
+                foreach ($rows[0] as $key => $value) {
+                    echo "<th>$key</th>";
+                }
+                echo "</tr>";
 
-        foreach ($rows as $row) {
-            echo "<tr>";
-            foreach ($row as $value) {
-                echo "<td>$value</td>";
+                foreach ($rows as $row) {
+                    echo "<tr>";
+                    foreach ($row as $value) {
+                        echo "<td>$value</td>";
+                    }
+                    echo "</tr>";
+                }
+            } else {
+                echo "<tr><td colspan='100'>No data found.</td></tr>";
             }
-            echo "</tr>";
+        } catch (PDOException $e) {
+            if (strpos($e->getMessage(), 'relation "'.$table.'" does not exist') !== false) {
+                echo "<tr><td colspan='100'>Table \"$table\" does not exist.</td></tr>";
+            } else {
+                echo "<tr><td colspan='100'>Error: " . $e->getMessage() . "</td></tr>";
+            }
         }
         echo "</table><br>";
     }
