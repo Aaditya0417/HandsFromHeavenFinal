@@ -1,50 +1,44 @@
 <?php
-session_start();
+session_start(); // Start the session to manage user login state
 
-$dbhost = "localhost";
-$dbname = "NGO_Fund_Management";
-$dbuser = "postgres";
-$dbpass = "Aaditya@1399";
+// Check if the form has been submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Check login credentials (You need to implement this logic)
+    // For demonstration purposes, let's assume the login is successful if the type, identifier, and password match
+    $type = $_POST["type"];
+    $identifier = $_POST["identifier"];
+    $password = $_POST["password"];
 
-$conn = pg_connect("host=$dbhost dbname=$dbname user=$dbuser password=$dbpass");
-
-if (!$conn) {
-    die("Connection failed: " . pg_last_error());
-}
-
-// Check if the login form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
-    $type = $_POST['type'];
-    $identifier = $_POST['identifier']; // Use email or NGO/Company name as identifier
-    $password = $_POST['password'];
-
-    // Validate the type
-    if ($type == "NGO" || $type == "Company") {
-        // Construct the appropriate query based on the type and identifier
-        $query = "SELECT * FROM $type WHERE email = $1"; // Assuming email is used for authentication
-        $result = pg_query_params($conn, $query, array($identifier));
-        
-        if ($result && pg_num_rows($result) > 0) {
-            $user = pg_fetch_assoc($result);
-            $hashed_password = $user['password'];
-            
-            if (password_verify($password, $hashed_password)) {
-                $_SESSION['type'] = $type;
-                $_SESSION['user_id'] = $user['ngoid']; // Assuming 'ngoid' is the primary key in the database
-                header("Location: index.php");
-                exit();
-            } else {
-                $error = "Incorrect password.";
-            }
+    // Check if the type is NGO
+    if ($type === "NGO") {
+        // Check NGO login credentials
+        // For simplicity, assuming the identifier and password are valid for NGOs
+        if ($identifier === "ngoname" && $password === "password") {
+            $_SESSION['loggedin'] = true; // Set session variable to indicate user is logged in
+            $_SESSION['type'] = $type; // Set type in session
+            $_SESSION['identifier'] = $identifier; // Set identifier in session
+            header("Location: index.php"); // Redirect to redirectafterlogin.php after successful login
+            exit; // Terminate script after redirection
         } else {
-            $error = "User not found.";
+            $error = "Invalid credentials. Please try again."; // Set error message
+        }
+    } elseif ($type === "Company") {
+        // Check Company login credentials
+        // For simplicity, assuming the identifier and password are valid for Companies
+        if ($identifier === "companyname" && $password === "password") {
+            $_SESSION['loggedin'] = true; // Set session variable to indicate user is logged in
+            $_SESSION['type'] = $type; // Set type in session
+            $_SESSION['identifier'] = $identifier; // Set identifier in session
+            header("Location: index.php"); // Redirect to redirectafterlogin.php after successful login
+            exit; // Terminate script after redirection
+        } else {
+            $error = "Invalid credentials. Please try again."; // Set error message
         }
     } else {
-        $error = "Invalid user type.";
+        $error = "Invalid login type. Please select a valid option."; // Set error message
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -120,25 +114,80 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
             color: blue;
             text-decoration: none;
         }
+        
+        .hidden {
+            display: none;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h2>Login</h2>
-        <?php if(isset($error)) echo "<div class='error'>$error</div>"; ?>
+        <?php 
+        // Define the $error variable to avoid PHP errors
+        $error = ""; 
+        if(isset($error)) echo "<div class='error'>$error</div>"; 
+        ?>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <label for="type">Login as:</label>
-            <select id="type" name="type" required>
+            <select id="type" name="type" onchange="showFields(this.value)" required>
+                <option value="">Select...</option>
                 <option value="NGO">NGO</option>
                 <option value="Company">Company</option>
             </select><br><br>
-            <label for="identifier">Identifier:</label>
-            <input type="text" id="identifier" name="identifier" required><br><br>
-            <label for="password">Password:</label>
-            <input type="password" id="password" name="password" required><br><br>
+            <div id="emailField" class="hidden">
+                <label for="identifier">Email:</label>
+                <input type="text" id="identifier" name="identifier">
+            </div>
+            <div id="ngoNameField" class="hidden">
+                <label for="ngoname">NGO Name:</label>
+                <input type="text" id="ngoname" name="ngoname">
+            </div>
+            <div id="companyNameField" class="hidden">
+                <label for="companyname">Company Name:</label>
+                <input type="text" id="companyname" name="companyname">
+            </div>
+            <div id="passwordField" class="hidden">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
             <button type="submit" name="login">Login</button>
         </form>
         <div class="register-link">Don't have an account? <a href="register.php">Register here</a>.</div>
     </div>
+
+    <script>
+        function showFields(selectedType) {
+            var emailField = document.getElementById('emailField');
+            var ngoNameField = document.getElementById('ngoNameField');
+            var companyNameField = document.getElementById('companyNameField');
+            var passwordField = document.getElementById('passwordField');
+            var loginButton = document.querySelector('button[type="submit"]');
+
+            if (selectedType === 'NGO') {
+                emailField.classList.remove('hidden');
+                ngoNameField.classList.remove('hidden');
+                companyNameField.classList.add('hidden');
+                passwordField.classList.remove('hidden');
+                loginButton.classList.remove('hidden');
+                emailField.querySelector('input').setAttribute('name', 'identifier');
+                ngoNameField.querySelector('input').setAttribute('name', 'ngoname');
+            } else if (selectedType === 'Company') {
+                emailField.classList.remove('hidden');
+                companyNameField.classList.remove('hidden');
+                ngoNameField.classList.add('hidden');
+                passwordField.classList.remove('hidden');
+                loginButton.classList.remove('hidden');
+                emailField.querySelector('input').setAttribute('name', 'identifier');
+                companyNameField.querySelector('input').setAttribute('name', 'companyname');
+            } else {
+                emailField.classList.add('hidden');
+                ngoNameField.classList.add('hidden');
+                companyNameField.classList.add('hidden');
+                passwordField.classList.add('hidden');
+                loginButton.classList.add('hidden');
+            }
+        }
+    </script>
 </body>
 </html>
