@@ -5,8 +5,9 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>Hands From Heaven</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
+  <meta content="Hands From Heaven is an organization dedicated to facilitating the allocation of donations from companies to NGOs in a transparent fashion." name="description">
+  <meta content="charity, NGO, support, company, assistance, projects, donation, Hands From Heaven, need " name="keywords">
+
 
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/favicon.png" rel="apple-touch-icon">
@@ -36,8 +37,9 @@
         <ul>
           <li><a class="nav-link scrollto active" href="index.php">HOME</a></li>
           <li><a class="nav-link scrollto" href="about.php">ABOUT US</a></li>
-          <li><a class="nav-link scrollto" href="activities.php">PROJECTS</a></li>
-          <li><a class="nav-link scrollto" href="donation.php">DONATE</a></li>
+          <li><a class="nav-link scrollto" href="company.php">COMPANIES</a></li>
+          <li><a class="nav-link scrollto" href="ngo.php">NGOs</a></li>
+          <li><a class="nav-link scrollto" href="projects.php">PROJECTS</a></li>
           <li><a class="nav-link scrollto" href="contact.php">CONTACT US</a></li>
           <li><a class="nav-link scrollto" href="login.php">LOGIN</a></li>
         </ul>
@@ -155,7 +157,7 @@
 <section id="activities" class="activities section-bg">
   <div class="container">
     <div class="section-title" data-aos="fade-up">
-      <h2>Our Activities</h2>
+      <h2>Activities</h2>
     </div>
     <div class="row">
       <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
@@ -209,11 +211,11 @@
           </div>
           <div class="mb-3"> 
             <i class="bi bi-envelope"></i>
-            <p>HandsFromHeaven@gmail.com</p>
+            <p><a href="mailto:HandsFromHeaven@gmail.com">HandsFromHeaven@gmail.com</a></p>
           </div>
           <div class="mb-3">
             <i class="bi bi-phone"></i>
-            <p>9769319089</p>
+            <p><a href="tel:9769319089">9769319089</a></p>
           </div>
         </div>
       </div>
@@ -258,8 +260,9 @@
           <ul>
             <li><a href="index.php">HOME</a></li>
             <li><a  href="about.php">ABOUT US</a></li>
-            <li><a href="activities.php">PROJECTS</a></li>
-            <li><a href="donation.php">DONATE</a></li>
+            <li><a href="companies.php"></a>COMPANIES</li>
+            <li><a href="ngo.php"></a>NGOs</li>
+            <li><a href="projects.php">PROJECTS</a></li>
             <li><a href="contact.php">CONTACT US</a></li>
             <li><a  href="login.php">LOGIN</a></li>
           </ul>
@@ -271,8 +274,8 @@
             KJ Somaiya Road<br>
             Ghatkopar East,<br>
             Mumbai- 400077 <br><br>
-            <strong>Phone:</strong> 9769319089<br>
-            <strong>Email:</strong> HandsFromHeaven@gmail.com<br>
+            <strong>Phone:</strong><a href="tel:9769319089"> 9769319089</a><br>
+            <strong>Email:</strong><a href="mailto:HandsFromHeaven@gmail.com"> HandsFromHeaven@gmail.com</a><br>
           </p>
         </div>
         <div class="col-lg-2 col-md-6 footer-links">
