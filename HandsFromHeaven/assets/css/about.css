@@ -401,6 +401,20 @@ section {
   background-color: white;
 }
 
+.uploadButton {
+  padding: 8px 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.uploadButton:hover {
+  background-color: #0056b3;
+}
+
+
 .btn-primary {
   background: #fc8f00;
   color:#fff;
