@@ -6,7 +6,6 @@
 /* *{
   border: 2px solid red;
 } */
-
 body {
   font-family: "Open Sans", sans-serif;
   color: #444444;
@@ -336,7 +335,6 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-
 /*--------------------------------------------------------------
 # Sections General
 --------------------------------------------------------------*/
@@ -344,11 +342,9 @@ section {
   padding: 60px 0;
   overflow: hidden;
 }
-
 .section-bg {
   background-color: #f7f8f9;
 }
-
 .section-title {
   text-align: center;
   padding-bottom: 30px;
@@ -364,6 +360,35 @@ section {
 .section-title p {
   margin-bottom: 0;
 }
+
+/*--------------------------------------------------------------
+# Carousel
+--------------------------------------------------------------*/
+.home-carousel 
+{
+    margin-top: 30px;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+  .swiper-container 
+  {
+    width: 100%;
+    height: 500px;
+  }
+  .swiper-slide {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0; 
+  }
+  .swiper-slide img 
+  {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+  }
 
 /*--------------------------------------------------------------
 # About
@@ -403,7 +428,9 @@ section {
   margin-bottom: 0;
 }
 
-/*Type Writer section*/
+/*--------------------------------------------------------------
+# blank space
+--------------------------------------------------------------*/
 .type
 {
   color:black;
@@ -414,6 +441,221 @@ section {
 .typer
 {
   text-align: center;
+}
+
+/*--------------------------------------------------------------
+# Causes
+--------------------------------------------------------------*/
+.causes .box {
+  padding: 20px;
+  background: rgb(22, 139, 248);
+  text-align: center;
+  height:400px;
+  border-radius: 4px;
+  margin-bottom:50px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #e9ecee;
+  margin-left:30px;
+  margin-bottom:50px;
+  margin-right:30px;
+}
+.causes .box-alt {
+  padding: 20px;
+  background: rgb(146, 202, 255);
+  text-align: center;
+  height:400px;
+  border-radius: 4px;
+  margin-bottom:50px;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #e9ecee;
+  margin-left:30px;
+  margin-bottom:50px;
+  margin-right:30px;
+}
+.causes h3 {
+  font-size: 18px; 
+  color: #555; 
+  font-family: 'Raleway', sans-serif; 
+  text-transform: uppercase; 
+  font-weight: bold;
+  margin-left:30px;
+  margin-right:30px;
+}
+button.slick-prev.slick-arrow,
+button.slick-next.slick-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9999;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  border-radius: 40%;
+  color: #000; 
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+button.slick-prev.slick-arrow:hover,
+button.slick-next.slick-arrow:hover {
+  background-color: black;
+}
+
+/*--------------------------------------------------------------
+# Activities
+--------------------------------------------------------------*/
+.activities h4 {
+  font-size: 36px;
+  color: #009cea;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 20px;
+}
+
+/*--------------------------------------------------------------
+# Contact
+--------------------------------------------------------------*/
+.contact .info {
+  padding: 10px;
+  background: #fff;
+  width: 100%;
+  border: 2px solid #e9ecee;
+  border-radius: 4px;
+}
+.contact .info .mb-3 {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px; 
+}
+.contact .info i {
+  font-size: 18px;
+  color: #009cea;
+  width: 31px;
+  height: 31px;
+  background: #f2f4f5;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%; 
+  margin-right: 10px;
+  overflow: hidden;
+}
+.contact .info p {
+  font-size: 13px;
+  color: #627680;
+  margin: 0; 
+}
+.contact .php-email-form {
+  background: #fff;
+}
+.contact .php-email-form .form-group {
+  margin-bottom: 20px;
+}
+.contact .php-email-form input,
+.contact .php-email-form textarea {
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.contact .php-email-form button[type=submit] {
+  background: #fc8f00;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  border-radius: 4px;
+  transition: background 0.4s;
+}
+.contact .php-email-form button[type=submit]:hover {
+  background: #1eb4ff;
+}
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+#footer {
+  background: #364146;
+  color: #f7f8f9;
+}
+#footer .footer-top {
+  padding: 60px 0 10px 0;
+}
+#footer .footer-top .footer-info {
+  padding-right: 20px;
+}
+#footer .footer-top .footer-info h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+#footer .footer-top .footer-info p {
+  font-size: 14px;
+  line-height: 24px;
+}
+#footer .footer-top .social-links a {
+  font-size: 18px;
+  display: inline-block;
+  background: #364146;
+  color: #8a9ca5;
+  padding: 8px;
+  margin-right: 4px;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  text-align: center;
+}
+#footer .footer-top h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+}
+#footer .footer-top .footer-links ul {
+  list-style: none;
+  padding: 0;
+}
+#footer .footer-top .footer-links ul li {
+  padding: 8px 0;
+}
+#footer .footer-top .footer-links ul a {
+  color: #ffffff;
+}
+#footer .container.py-4 {
+  text-align: center;
+  padding-top: 20px;
+}
+
+/*--------------------------------------------------------------
+# Breadcrumbs
+--------------------------------------------------------------*/
+.breadcrumbs {
+  padding: 15px 0;
+  background: #f4f6f7;
+  min-height: 40px;
+  margin-top: 70px;
+}
+.breadcrumbs h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0 0 10px 0;
+  margin: 0;
+  font-size: 14px;
+}
+.breadcrumbs ol li + li {
+  padding-left: 10px;
+}
+.breadcrumbs ol li + li::before {
+  display: inline-block;
+  padding-right: 10px;
+  color: #4c5c63;
+  content: "/";
 }
 
 /*--------------------------------------------------------------
@@ -474,7 +716,6 @@ section {
 .services .icon-box-blue:hover {
   border-color: #2282ff;
 }
-
 
 /*--------------------------------------------------------------
 testimonials .testimonials-carousel, .testimonials .testimonials-slider {
@@ -659,213 +900,6 @@ testimonials .testimonials-carousel, .testimonials .testimonials-slider {
   transition: all 0.4s ease-in-out;
 }
 
-
-/* Causes */
-.causes .box {
-  padding: 20px;
-  background: rgb(22, 139, 248);
-  text-align: center;
-  height:400px;
-  border-radius: 4px;
-  margin-bottom:50px;
-  position: relative;
-  overflow: hidden;
-  border: 2px solid #e9ecee;
-  margin-left:30px;
-  margin-bottom:50px;
-  margin-right:30px;
-}
-.causes .box-alt {
-  padding: 20px;
-  background: rgb(146, 202, 255);
-  text-align: center;
-  height:400px;
-  border-radius: 4px;
-  margin-bottom:50px;
-  position: relative;
-  overflow: hidden;
-  border: 2px solid #e9ecee;
-  margin-left:30px;
-  margin-bottom:50px;
-  margin-right:30px;
-}
-
-.causes h3 {
-  font-size: 18px; 
-  color: #555; 
-  font-family: 'Raleway', sans-serif; 
-  text-transform: uppercase; 
-  font-weight: bold;
-  margin-left:30px;
-  margin-right:30px;
-}
-
-
-/* Activities */
-
-.activities h4 {
-  font-size: 36px;
-  color: #009cea;
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  margin-bottom: 20px;
-}
-
-
-/*--------------------------------------------------------------
-# Contact
---------------------------------------------------------------*/
-.contact .info {
-  padding: 10px;
-  background: #fff;
-  width: 100%;
-  border: 2px solid #e9ecee;
-  border-radius: 4px;
-}
-
-.contact .info .mb-3 {
-  display: flex;
-  align-items: center;
-  margin-bottom: 15px; 
-}
-
-.contact .info i {
-  font-size: 18px;
-  color: #009cea;
-  width: 31px;
-  height: 31px;
-  background: #f2f4f5;
-  display: flex; 
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%; 
-  margin-right: 10px;
-  overflow: hidden;
-}
-
-.contact .info p {
-  font-size: 13px;
-  color: #627680;
-  margin: 0; 
-}
-
-.contact .php-email-form {
-  background: #fff;
-}
-
-.contact .php-email-form .form-group {
-  margin-bottom: 20px;
-}
-
-.contact .php-email-form input,
-.contact .php-email-form textarea {
-  border-radius: 5px;
-  border: 1px solid #ccc;
-  padding: 10px;
-  width: 100%;
-  box-sizing: border-box;
-}
-
-.contact .php-email-form button[type=submit] {
-  background: #fc8f00;
-  border: 0;
-  padding: 10px 24px;
-  color: #fff;
-  border-radius: 4px;
-  transition: background 0.4s;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: #1eb4ff;
-}
-
-/*--------------------------------------------------------------
-# Footer
---------------------------------------------------------------*/
-#footer {
-  background: #364146;
-  color: #f7f8f9;
-}
-#footer .footer-top {
-  padding: 60px 0 10px 0;
-}
-#footer .footer-top .footer-info {
-  padding-right: 20px;
-}
-#footer .footer-top .footer-info h3 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-#footer .footer-top .footer-info p {
-  font-size: 14px;
-  line-height: 24px;
-}
-#footer .footer-top .social-links a {
-  font-size: 18px;
-  display: inline-block;
-  background: #364146;
-  color: #8a9ca5;
-  padding: 8px;
-  margin-right: 4px;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  text-align: center;
-}
-#footer .footer-top h4 {
-  font-size: 16px;
-  font-weight: 600;
-  color: #ffffff;
-}
-#footer .footer-top .footer-links ul {
-  list-style: none;
-  padding: 0;
-}
-#footer .footer-top .footer-links ul li {
-  padding: 8px 0;
-}
-#footer .footer-top .footer-links ul a {
-  color: #ffffff;
-}
-#footer .container.py-4 {
-  text-align: center;
-  padding-top: 20px;
-}
-
-
-
-/*--------------------------------------------------------------
-# Breadcrumbs
---------------------------------------------------------------*/
-.breadcrumbs {
-  padding: 15px 0;
-  background: #f4f6f7;
-  min-height: 40px;
-  margin-top: 70px;
-}
-.breadcrumbs h2 {
-  font-size: 24px;
-  font-weight: 600;
-}
-.breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0 0 10px 0;
-  margin: 0;
-  font-size: 14px;
-}
-.breadcrumbs ol li + li {
-  padding-left: 10px;
-}
-.breadcrumbs ol li + li::before {
-  display: inline-block;
-  padding-right: 10px;
-  color: #4c5c63;
-  content: "/";
-}
-
-
 /*--------------------------------------------------------------
 # Frequently Asked Questions
 .faq {
@@ -917,5 +951,5 @@ testimonials .testimonials-carousel, .testimonials .testimonials-slider {
 }
 .faq .faq-list .collapsed .icon-close {
   display: none;
-  transition: 0.6s;
+  transition: 0.6s;
 }
