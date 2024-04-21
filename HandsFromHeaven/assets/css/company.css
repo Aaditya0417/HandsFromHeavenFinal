@@ -365,6 +365,39 @@ section {
   margin-bottom: 0;
 }
 
+/*--------------------------------------------------------------
+# company listing
+--------------------------------------------------------------*/
+.container1 {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.company-list {
+  margin-top: 20px;
+}
+
+.company-item {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.company-item h2 {
+  margin-top: 0;
+}
+
+.company-item p {
+  margin: 5px 0;
+}
 
 /*--------------------------------------------------------------
 .services .icon-box {
