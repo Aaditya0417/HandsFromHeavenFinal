@@ -27,10 +27,11 @@
           </div>
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto " href="index.php">HOME</a></li>
+          <li><a class="nav-link scrollto" href="index.php">HOME</a></li>
           <li><a class="nav-link scrollto" href="about.php">ABOUT US</a></li>
-          <li><a class="nav-link scrollto active" href="activities.php">PROJECTS</a></li>
-          <li><a class="nav-link scrollto " href="donation.php">DONATE</a></li>
+          <li><a class="nav-link scrollto" href="company.php">COMPANIES</a></li>
+          <li><a class="nav-link scrollto" href="ngo.php">NGOs</a></li>
+          <li><a class="nav-link scrollto active" href="projects.php">PROJECTS</a></li>
           <li><a class="nav-link scrollto" href="contact.php">CONTACT US</a></li>
           <li><a class="nav-link scrollto" href="login.php">LOGIN</a></li>
         </ul>
@@ -57,55 +58,56 @@
     </section>
 
 <!-- Footer -->
-    <footer id="footer">
-      <div class="footer-top">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-4 col-md-6 footer-info">
-              <h3>Hands From Heaven</h3>
-              <p>We are a non-profit organization dedicated to providing shelter, food, and education to those in need. Join us in our mission to create a better world for all.</p>
-            </div>
-            <div class="col-lg-2 col-md-6 footer-links">
-              <h4>Quick Links</h4>
-              <ul>
-              <li><a href="index.php">HOME</a></li>
-              <li><a  href="about.php">ABOUT US</a></li>
-              <li><a href="activities.php">PROJECTS</a></li>
-              <li><a href="donation.php">DONATE</a></li>
-              <li><a href="contact.php">CONTACT US</a></li>
-              <li><a  href="login.php">LOGIN</a></li>
-              </ul>
-            </div>
-            <div class="col-lg-3 col-md-6 footer-contact">
-              <h4>Contact Us</h4>
-              <p>
-                KJ SOMAIYA,<br>
-                KJ Somaiya Road<br>
-                Ghatkopar East,<br>
-                Mumbai- 400077 <br><br>
-                <strong>Phone:</strong> 9769319089<br>
-                <strong>Email:</strong> HandsFromHeaven@gmail.com<br>
-              </p>
-            </div>
-            <div class="col-lg-2 col-md-6 footer-links">
-              <h4>Our Social Networks</h4>
-              <div class="social-links mt-3">
-                <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-              </div>
-            </div>
+<footer id="footer">
+  <div class="footer-top">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 footer-info">
+          <h3>Hands From Heaven</h3>
+          <p>We are a non-profit organization dedicated to providing shelter, food, and education to those in need. Join us in our mission to create a better world for all.</p>
+        </div>
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.php">HOME</a></li>
+            <li><a  href="about.php">ABOUT US</a></li>
+            <li><a href="companies.php"></a>COMPANIES</li>
+            <li><a href="ngo.php"></a>NGOs</li>
+            <li><a href="projects.php">PROJECTS</a></li>
+            <li><a href="contact.php">CONTACT US</a></li>
+            <li><a  href="login.php">LOGIN</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-3 col-md-6 footer-contact">
+          <h4>Contact Us</h4>
+          <p>
+            KJ SOMAIYA,<br>
+            KJ Somaiya Road<br>
+            Ghatkopar East,<br>
+            Mumbai- 400077 <br><br>
+            <strong>Phone:</strong><a href="tel:9769319089"> 9769319089</a><br>
+            <strong>Email:</strong><a href="mailto:HandsFromHeaven@gmail.com"> HandsFromHeaven@gmail.com</a><br>
+          </p>
+        </div>
+        <div class="col-lg-2 col-md-6 footer-links">
+          <h4>Our Social Networks</h4>
+          <div class="social-links mt-3">
+            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
+            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
+            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
           </div>
         </div>
       </div>
-      <div class="container py-4">
-        <div class="row">
-          <div class="col-lg-6 text-center text-lg-start">
-            <p> &copy; <strong><span>Hands From Heaven</span></strong>, 2024. All Rights Reserved</p>
-          </div>
-        </div>
+    </div>
+  </div>
+  <div class="container py-4">
+    <div class="row">
+      <div class="col-lg-6 text-center text-lg-start">
+        <p> &copy; <strong><span>Hands From Heaven</span></strong>, 2024. All Rights Reserved</p>
       </div>
-    </footer>
+    </div>
+  </div>
+</footer>
 
   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
