@@ -1,3 +1,28 @@
+<?php
+  require('config.php'); 
+
+  if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+      $name = $_POST['name'];
+      $email = $_POST['email'];
+      $phone_number = $_POST['phone_number'];
+      $subject = $_POST['subject'];
+      $message = $_POST['message'];
+
+      $query = "INSERT INTO contact_messages (name, email, phone_number, subject, message) VALUES ($1, $2, $3, $4, $5)";
+      $result = pg_query_params($con, $query, array($name, $email, $phone_number, $subject, $message));
+
+      if ($result) {
+
+          echo "<div class='alert alert-success'>Message sent successfully!</div>";
+      } else {
+
+          echo "<div class='alert alert-danger'>Error sending message. Please try again later.</div>";
+      }
+  }
+  ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,46 +102,42 @@
       </div>
     </section>
     <section id="contact" class="contact">
-        <div class="container">
-            <form action="" method="post" role="form" class="contact-form">
-          <div class="row">
-              <div class="col-lg-6">
-                <div class="form-group">
-                    <label>YOUR NAME</label>
-                    <input type="text" name="name" class="form-control" id="name" required>
-                  </div>
-                  <br>
-                  <div class="form-group">
-                    <label>YOUR SUBJECT</label>
-                    <input type="email" class="form-control" name="email"  id="email" required>
-                  </div>
-              </div>
-              <div class="col-lg-6">
-                <div class="form-group">
-                    <label>YOUR EMAIL</label>
-                    <input type="text" name="name" class="form-control" id="name" required>
-                  </div>
-                  <br>
-
-                  <div class="form-group">
-                    <label>YOUR PHONE NUMBER</label>
-                    <input type="email" class="form-control" name="email"  id="email" required>
-                  </div>
-              </div>
-              <br>
-             </div>
-             <br>
-             <col-lg-12>
-             <div class="form-group">
+    <div class="container">
+        <form action="" method="post" role="form" class="contact-form">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>YOUR NAME</label>
+                        <input type="text" name="name" class="form-control" id="name" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>SUBJECT</label>
+                        <input type="text" class="form-control" name="subject" id="subject" required>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>YOUR EMAIL</label>
+                        <input type="email" name="email" class="form-control" id="email" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>YOUR PHONE NUMBER</label>
+                        <input type="text" class="form-control" name="phone_number" id="phone_number" required>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
                 <label>YOUR MESSAGE</label>
                 <textarea class="form-control" name="message" rows="5" placeholder="Message" id="msg" required></textarea>
-              </div>
-              <br><br>
-              <div><button type="submit">SEND MESSAGE</button></div>
-            </form>
-            </col-lg-12>
-        </div>
-    </section>
+            </div>
+            <br><br>
+            <div><button type="submit">SEND MESSAGE</button></div>
+        </form>
+    </div>
+</section>
   </main>
 
 <!-- Footer -->
