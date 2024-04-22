@@ -399,6 +399,13 @@ h1 {
   margin: 5px 0;
 }
 
+.search-container {
+  text-align: center;
+}
+
+.search-container input[type="text"] {
+  width: 200px; 
+}
 
 
 /*--------------------------------------------------------------
