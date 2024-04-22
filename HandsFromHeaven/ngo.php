@@ -67,17 +67,21 @@ pg_close($connection);
 
   <div id="hero"></div>
 
-  <div class="container1">
-    <h1>NGO Listing</h1>
-    <div id="ngoList" class="ngo-list">
-      <!-- NGOs will be dynamically added here -->
-    </div>
+  <div class="container">
+    <br><br>
+  <h1>NGO Listing</h1>
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search NGOs...">
   </div>
+  <div id="ngoList" class="ngo-list">
+    <!-- NGOs will be dynamically added here -->
+  </div>
+</div>
+
 
   <script>
     // PHP-generated JavaScript variable containing NGO data
     const ngoData = <?php echo json_encode($ngoData); ?>;
-
     // Function to create HTML for each NGO item
     function createNgoItem(ngo) {
       const verificationStatus = ngo.verified ? "Verified" : "Non-Verified";
@@ -88,10 +92,10 @@ pg_close($connection);
               <p>Email: ${ngo.email} | Phone: ${ngo.phone}</p>
               <p>Funding needs: ${ngo.fundingneeds}</p>
               <p>Verification Status: ${verificationStatus}</p>
+              <button onclick="donateToNGO(${ngo.ngoid})">Donate</button>
           </div>
       `;
     }
-
     // Function to render the list of NGOs
     function renderNgoList() {
       const ngoListContainer = document.getElementById("ngoList");
@@ -101,9 +105,38 @@ pg_close($connection);
       });
       ngoListContainer.innerHTML = html;
     }
-
     // Call renderNgoList when page loads
     window.onload = renderNgoList;
+    
+
+
+    // Function to show NGOs based on search input
+function filterNgoList() {
+  const searchInput = document.getElementById("searchInput").value.toLowerCase();
+  const filteredNgoData = ngoData.filter(ngo => {
+    return (
+      ngo.ngoname.toLowerCase().includes(searchInput) ||
+      ngo.missionstatement.toLowerCase().includes(searchInput) ||
+      ngo.email.toLowerCase().includes(searchInput) ||
+      ngo.phone.toLowerCase().includes(searchInput) ||
+      ngo.fundingneeds.toLowerCase().includes(searchInput)
+      
+    );
+  });
+  renderNgoList1(filteredNgoData);
+}
+// Function to render the filtered list of NGOs
+function renderNgoList1(filteredNgoData) {
+  const ngoListContainer = document.getElementById("ngoList");
+  let html = "";
+  filteredNgoData.forEach(ngo => {
+    html += createNgoItem(ngo);
+  });
+  ngoListContainer.innerHTML = html;
+}
+// Call filterNgoList when search input changes
+document.getElementById("searchInput").addEventListener("input", filterNgoList);
+
   </script>
 
   <!-- footer -->
