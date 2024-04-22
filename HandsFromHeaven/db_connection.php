@@ -31,7 +31,7 @@ try {
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     // Fetch tables and display their contents
-    $tables = ['company', 'ngo', 'project', 'fundallocation', 'ngo_causes', 'project_causes', 'collabs_on', 'company_causes','donates_to_cn','donates_to_cp'];
+    $tables = ['company', 'ngo', 'project', 'fundallocation', 'ngo_causes', 'project_causes', 'collabs_on', 'company_causes','donates_to_cn','donates_to_cp','volunteers', 'contact_messages'];
 
     foreach ($tables as $table) {
         echo "<h2>$table Table</h2>";
