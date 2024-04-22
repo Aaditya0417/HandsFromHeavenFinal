@@ -68,16 +68,20 @@ pg_close($connection);
   <div id="hero"></div>
 
   <div class="container1">
+    <br>
     <h1>Company Listing</h1>
+    <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search Companies...">
+  </div>
     <div id="companyList" class="company-list">
       <!-- Companies will be dynamically added here -->
     </div>
   </div>
 
   <script>
+
     // PHP-generated JavaScript variable containing Company data
     const companyData = <?php echo json_encode($companyData); ?>;
-
     // Function to create HTML for each company item
     function createcompanyItem(company) {
       const verificationStatus = company.verified ? "Verified" : "Non-Verified";
@@ -90,7 +94,6 @@ pg_close($connection);
           </div>
       `;
     }
-
     // Function to render the list of companies
     function rendercompanyList() {
       const companyListContainer = document.getElementById("companyList");
@@ -100,9 +103,36 @@ pg_close($connection);
       });
       companyListContainer.innerHTML = html;
     }
-
     // Call rendercompanyList when page loads
     window.onload = rendercompanyList;
+
+    
+
+    // Function to show Companies based on search input
+function filtercompanyList() {
+  const searchInput = document.getElementById("searchInput").value.toLowerCase();
+  const filteredcompanyData = companyData.filter(company => {
+    return (
+      company.companyname.toLowerCase().includes(searchInput) ||
+      company.email.toLowerCase().includes(searchInput) ||
+      company.phone.toLowerCase().includes(searchInput) ||
+      company.fundavailable.toLowerCase().includes(searchInput) 
+    );
+  });
+  rendercompanyList1(filteredcompanyData);
+}
+// Function to render the filtered list of Companies
+function rendercompanyList1(filteredcompanyData) {
+  const companyListContainer = document.getElementById("companyList");
+  let html = "";
+  filteredcompanyData.forEach(company => {
+    html += createCcmpanyItem(company);
+  });
+  companyListContainer.innerHTML = html;
+}
+// Call filterCompanyList when search input changes
+document.getElementById("searchInput").addEventListener("input", filtercompanyList);
+
   </script>
 
   <!-- footer -->
