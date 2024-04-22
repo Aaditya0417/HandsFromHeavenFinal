@@ -1,3 +1,28 @@
+<?php
+require('config.php'); 
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone_number = $_POST['phone_number'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    $query = "INSERT INTO contact_messages (name, email, phone_number, subject, message) VALUES ($1, $2, $3, $4, $5)";
+    $result = pg_query_params($con, $query, array($name, $email, $phone_number, $subject, $message));
+
+    if ($result) {
+
+        echo "<div class='alert alert-success'>Message sent successfully!</div>";
+    } else {
+      header("Location: contact.php");
+        echo "<div class='alert alert-danger'>Error sending message. Please try again later.</div>";
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -220,27 +245,38 @@
         </div>
       </div>
       <div class="col-lg-5 col-md-12" data-aos="fade-up" data-aos-delay="300">
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
-          <div class="form-group">
-            <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
-          </div>
-          <div class="form-group">
-            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
-          </div>
-          <div class="form-group">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
-          </div>
-          <div class="text-center">
-            <button type="submit" class="btn btn-success">Send Message</button>
-          </div>
-          <div class="text-center">
-            <div class="loading" style="display: none;">Loading...</div>
-            <div class="error-message" style="display: none;"></div>
-            <div class="sent-message" style="display: none;">Your message has been sent. Thank you!</div>
-          </div>
+      <form action="" method="post" role="form" class="contact-form">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>YOUR NAME</label>
+                        <input type="text" name="name" class="form-control" id="name" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>SUBJECT</label>
+                        <input type="text" class="form-control" name="subject" id="subject" required>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group">
+                        <label>YOUR EMAIL</label>
+                        <input type="email" name="email" class="form-control" id="email" required>
+                    </div>
+                    <br>
+                    <div class="form-group">
+                        <label>YOUR PHONE NUMBER</label>
+                        <input type="text" class="form-control" name="phone_number" id="phone_number" required>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="form-group">
+                <label>YOUR MESSAGE</label>
+                <textarea class="form-control" name="message" rows="5" placeholder="Message" id="msg" required></textarea>
+            </div>
+            <br><br>
+            <div><button type="submit">SEND MESSAGE</button></div>
         </form>
       </div>
     </div>
@@ -259,12 +295,12 @@
           <h4>Quick Links</h4>
           <ul>
             <li><a href="index.php">HOME</a></li>
-            <li><a  href="about.php">ABOUT US</a></li>
-            <li><a href="companies.php"></a>COMPANIES</li>
-            <li><a href="ngo.php"></a>NGOs</li>
+            <li><a href="about.php">ABOUT US</a></li>
+            <li><a href="companies.php">COMPANIES</a></li> <!-- Added link -->
+            <li><a href="ngo.php">NGOs</a></li> <!-- Added link -->
             <li><a href="projects.php">PROJECTS</a></li>
             <li><a href="contact.php">CONTACT US</a></li>
-            <li><a  href="login.php">LOGIN</a></li>
+            <li><a href="login.php">LOGIN</a></li>
           </ul>
         </div>
         <div class="col-lg-3 col-md-6 footer-contact">
