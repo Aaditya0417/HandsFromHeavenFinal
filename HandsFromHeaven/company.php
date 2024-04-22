@@ -126,7 +126,7 @@ function rendercompanyList1(filteredcompanyData) {
   const companyListContainer = document.getElementById("companyList");
   let html = "";
   filteredcompanyData.forEach(company => {
-    html += createCcmpanyItem(company);
+    html += createcompanyItem(company);
   });
   companyListContainer.innerHTML = html;
 }
