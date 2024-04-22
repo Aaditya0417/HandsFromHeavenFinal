@@ -1,100 +1,49 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <style>
-        /* login.css */
-
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-}
-
-.form {
-    width: 300px;
-    margin: 0 auto;
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.login-title {
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.login-input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-}
-
-.login-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    border: none;
-    border-radius: 5px;
-    color: #fff;
-    font-size: 16px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-.login-button:hover {
-    background-color: #0056b3;
-}
-
-.link {
-    text-align: center;
-}
-
-.link a {
-    color: #007bff;
-}
-
-.link a:hover {
-    text-decoration: none;
-    color: #0056b3;
-}
-
-.img {
-    width: 100px;
-    height: 100px;
-    display: block;
-    margin: 0 auto;
-    margin-bottom: 20px;
-    border-radius: 50%;
-}
-
-hr {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    border: 0;
-    border-top: 1px solid #ccc;
-}
-
     <meta charset="utf-8"/>
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Hands From Heaven | Login Form</title>
-    <link rel="stylesheet" href="../assets/css/login.css"/>
-   
+    <link href="assets/css/login.css" rel="stylesheet">
+    <!-- Add Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <!-- Custom styles for this template -->
+    <style>
+        /* Position the carousel behind the form */
+        #home-carousel {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Ensure the carousel stays behind the form */
+        }
+
+        /* Style adjustments for the form */
+        .form {
+            position: relative;
+            z-index: 1; /* Ensure the form stays above the carousel */
+            max-width: 400px; /* Adjust form width as needed */
+            margin: 0 auto; /* Center the form horizontally */
+            padding: 20px;
+            background: #fff; /* Set form background color */
+            border-radius: 8px; /* Add border radius to the form */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add shadow to the form */
+        }
+
+        /* Ensure the carousel images fill the container */
+        .swiper-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
     </style>
 </head>
 <body>
+
 <?php
-// Start session and include database connection
 session_start();
 require('config.php');
-
-// Enable error reporting
-error_reporting(E_ALL);
-ini_set('display_errors', 1);
 
 // When form submitted, check and create user session.
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -114,8 +63,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($row) {
         if (password_verify($password, $row['password'])) {
             $_SESSION['username'] = $email;
-            // Redirect to user dashboard page
-            header("Location: index.php");
+            $_SESSION['user_type'] = 'ngo'; // Set user type as NGO
+            header("Location: profile.php?username=" . urlencode($_SESSION['username']) . "&user_type=" . urlencode($_SESSION['user_type']));
             exit;
         }
     }
@@ -133,8 +82,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($row) {
         if (password_verify($password, $row['password'])) {
             $_SESSION['username'] = $email;
-            // Redirect to user dashboard page
-            header("Location: index.php");
+            $_SESSION['user_type'] = 'company'; // Set user type as company
+            header("Location: profile.php?username=" . urlencode($_SESSION['username']) . "&user_type=" . urlencode($_SESSION['user_type']));
             exit;
         }
     }
@@ -148,17 +97,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 ?>
 
 
+<!-- Login Form -->
 <form class="form" method="post" name="login">
-    
-    <hr />
+<div class="form-container">
     <h1 class="login-title">Login</h1>
-    <input type="text" class="login-input" name="email" placeholder="Email" autofocus="true"/>
-    <input type="password" class="login-input" name="password" placeholder="Password"/>
+    <input type="text" class="login-input" name="email" placeholder="Email" autofocus="true"/><br/>
+    <input type="password" class="login-input" name="password" placeholder="Password"/><br/>
     <input type="submit" value="Login" name="submit" class="login-button"/>
     <p class="link">Don't have an account? <a href="register.php">Register here!</a></p>
     <hr />
-
-    
     <div class="g_id_signin"
          data-type="standard"
          data-shape="rectangular"
@@ -172,5 +119,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <script src="js/script.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<!-- Add Swiper JS -->
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<!-- Initialize Swiper -->
+<script>
+    var swiper = new Swiper('.swiper-container', {
+        pagination: {
+            el: '.swiper-pagination',
+        },
+        navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+        },
+    });
+    
+</script>
 </body>
 </html>
